@@ -37,6 +37,13 @@ namespace DMKEngine
                 if (p.Value.TriggerDanmaku(json)) break;
             }
         }
+        public void TriggerSuperchat(string json)
+        {
+            foreach (var p in plugins)
+            {
+                if (p.Value.TriggerSuperchat(json)) break;
+            }
+        }
 
         public void TriggerGift(string json)
         {
@@ -59,6 +66,14 @@ namespace DMKEngine
             foreach (var p in plugins)
             {
                 if (p.Value.TriggerOther(json)) break;
+            }
+        }
+
+        public void TriggerStreamStartEnd(string json)
+        {
+            foreach (var p in plugins)
+            {
+                if (p.Value.TriggerStreamStartEnd(json)) break;
             }
         }
 
